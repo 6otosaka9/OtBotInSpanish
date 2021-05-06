@@ -25,7 +25,7 @@ exports.lvlnoon = () => {
 }
 
 exports.noregis = () => {
-	return`*「 COMO REGISTRASE 」*\n\n* ${prefix}daftar nombre|edad* \n*ejemplo: ${prefix}daftar affis|17*`
+	return`*「 COMO REGISTRASE 」*\n\n* ${prefix}daftar nombre|edad* \n*ejemplo: ${prefix}daftar otosaka|16*`
 }
 
 exports.rediregis = () => {
@@ -124,7 +124,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 	}
 	if (isGroup){
 	return `
-${a}❏ ABOUT USER${a}
+${a}❏  USUARIO${a}
  ${a}│ Nombre : ${pushname}${a}
  ${a}│ Número : wa.me/${sender.split("@")[0]}${a}
  ${a}│ Propietario del bot : ${owner}${a}
@@ -133,6 +133,10 @@ ${a}❏ ABOUT USER${a}
  ${a}│ Nivel : ${getLevelingLevel(sender)}${a}
  ${a}│ Papel : ${role}${a}
  ${a}╰ Registros de usuario : ${_registered.length}${a}
+
+${a}❏  CANALES DE YOUTUBE${a}
+ ${a}Turbo NTR : https://youtube.com/channel/UCqiXnIA8_K83MqHtnyMzR2A?sub_confirmatión=1${a}
+ ${a}EL CUBANO MODS : https://youtube.com/channel/UCcII3XWHCxmKObs1K4dfg3g?sub_confirmatión=1${a}
  
 ${a}❏ACERCA DE BOT${a}
  ${a}│ Nombre : ${client.user.name}${a}
@@ -323,7 +327,7 @@ ${a}❏GRACIAS A${a}
 `
 } else if (!isGroup) {
     return `
-${a}❏ ABOUT USER${a}
+${a}❏ABOUT USER${a}
  ${a}│ Nombre : ${pushname}${a}
  ${a}│ Número : wa.me/${sender.split("@")[0]}${a}
  ${a}│ Tu dinero : Rp${uangku},-${a}
@@ -331,6 +335,10 @@ ${a}❏ ABOUT USER${a}
  ${a}│ Nivel : ${getLevelingLevel(sender)}${a}
  ${a}│ Papel : ${role}${a}
  ${a}╰ Registros de usuario : ${_registered.length}${a}
+
+${a}❏CANALES DE YOUTUBE${a}
+ ${a}Turbo NTR : https://youtube.com/channel/UCqiXnIA8_K83MqHtnyMzR2A?sub_confirmatión=1${a}
+ ${a}EL CUBANO MODS : https://youtube.com/channel/UCcII3XWHCxmKObs1K4dfg3g?sub_confirmatión=1${a}
  
 ${a}❏ACERCA DE BOT${a}
  ${a}│ • Nombre: ${client.user.name}${a}
@@ -523,7 +531,7 @@ exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel,
 `}
  
 exports.limitend = (pushname) => {
-	return`*maaf ${pushname} El límite de hoy expira *\n* límite de compra para obtener un límite/subir de nivel*`
+	return`*Hola ${pushname} el límite de hoy expira *\n* límite de compra para obtener un límite/subir de nivel*`
 }
 
 exports.limitcount = (limitCounts) => {
