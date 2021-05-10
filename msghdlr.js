@@ -443,7 +443,7 @@ module.exports = msgHdlr = async (client , mek) => {
             if (bad.includes(messagesC)) {
                 if (!isGroupAdmins) {
                     try { 
-                        reply("JAGA UCAPAN DONG!! 😠")
+                        reply("KEEP DONG Saludos!! 😠")
                         setTimeout( () => {
  	                           client.groupRemove(from, sender) 
  					   	}, 5000)
@@ -465,11 +465,11 @@ module.exports = msgHdlr = async (client , mek) => {
 							}, 1000)
 								setTimeout( () => {
 								client.updatePresence(from, Presence.composing)
-								reply("*「 ANTI BADWORD 」*\nKamu dikick karena berkata kasar!")
+								reply("*「 ANTI BADWORD 」*\nTe patearon por hablar con dureza!")
 							}, 0)
-                        } catch { client.sendMessage(from, `Untung cya bukan admin, kalo admin udah cya kick!`, text , {quoted : mek}) }
+Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text , {quoted : mek}) }
                 } else {
-                    return reply( "Tolong Jaga Ucapan Min 😇")
+                    return reply( "Mire Min Speech 😇 ")
                 }
             }
         }
@@ -610,7 +610,7 @@ module.exports = msgHdlr = async (client , mek) => {
 					var gh = body.slice(9)
 					var porn = gh.split("&")[0];
 					var hub = gh.split("&")[1];
-					if (args.length < 1) return reply(`「❗」Contoh : ${prefix}pornhub Ramlan & Hub`)
+					if (args.length < 1) return reply(`「❗」Ejemplo : ${prefix}pornhub Ramlan & Hub`)
 					reply(ind.wait())
 					alan = await getBuffer(`https://vinz.zeks.xyz/api/pornhub?text1=${porn}&text2=${hub}`)
 					client.sendMessage(from, alan, image, {quoted: mek})
@@ -633,7 +633,7 @@ module.exports = msgHdlr = async (client , mek) => {
 					var gh = body.slice(12)
 					var gli = gh.split("&")[0];
 					var tch = gh.split("&")[1];
-					if (args.length < 1) return reply(`「❗」Contoh : ${prefix}glitchtext Ramlan & Gans`)
+					if (args.length < 1) return reply(`「❗」Ejemplo : ${prefix}glitchtext Ramlan & Gans`)
 					reply(ind.wait())
 					buffer = await getBuffer(`https://api.zeks.xyz/api/gtext?text1=${gli}&text2=${tch}&apikey=apivinz`)
 					client.sendMessage(from, buffer, image, {quoted: mek})
@@ -644,7 +644,7 @@ module.exports = msgHdlr = async (client , mek) => {
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
 					if (args.length < 1) return reply(`Teksnya mana kak? Contoh : ${prefix}nulis Ramlan baik hati`)
 					nul = body.slice(7)
-					reply('「❗」WAIT BRO GUE NULIS DUMLU YAKAN')
+					reply('「❗WAIT BRO GUE NULIS DUMLU YAKAN')
 					tak = await getBuffer(`https://api.zeks.xyz/api/nulis?text=${nul}&apikey=apivinz`)
 					client.sendMessage(from, tak, image, {quoted: mek, caption: 'Lebih baik nulis sendiri ya kak :*'})
 					await limitAdd(sender)				
@@ -652,9 +652,9 @@ module.exports = msgHdlr = async (client , mek) => {
 				case 'tahta':
 					if (!isRegistered) return reply(ind.noregis())
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply(`「❗」Contoh : ${prefix}hartatahta hanya dia`)
+					if (args.length < 1) return reply(`「❗」Ejemplo : ${prefix}hartatahta hanya dia`)
 					har = body.slice(12)
-					reply('「❗」Hirti Tihti Tai Anjg :v')
+					reply('「❗Taburete para perro :v')
 					buffer = await getBuffer(`https://api.zeks.xyz/api/hartatahta?text=${har}&apikey=apivinz`)
 					client.sendMessage(from, buffer, image, {quoted: mek})
 					await limitAdd(sender)
@@ -1528,7 +1528,7 @@ module.exports = msgHdlr = async (client , mek) => {
                 const userXp = getLevelingXp(sender)
                 if (userLevel === undefined && userXp === undefined) return reply(ind.lvlnul())
                 const requiredXp = 5000 * (Math.pow(2, userLevel) - 1)
-                resul = `┏━━❉ *LEVEL* ❉━━\n┣⊱ *Nama* : ${pushname}\n┣⊱ Nomor : wa.me/${sender.split("@")[0]}\n┣⊱ User XP :  ${userXp}/${requiredXp}\n┣⊱ User Level : ${userLevel}\n┗━━━━━━━━━━━━`
+                resul = `┏━━❉ *LEVEL* ❉━━\n┣⊱ *Nombre* : ${pushname}\n┣⊱ Numero : wa.me/${sender.split("@")[0]}\n┣⊱ User XP :  ${userXp}/${requiredXp}\n┣⊱ Nivel de usuario : ${userLevel}\n┗━━━━━━━━━━━━`
                 costum(resul, text, tescuk, per)
 				break 
 				case 'mining':
@@ -1635,13 +1635,13 @@ module.exports = msgHdlr = async (client , mek) => {
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `𝗔𝘀𝗲𝗸 𝗱𝗮𝗽𝗮𝘁 𝗺𝗮𝗸𝗮𝗻𝗮𝗻,𝗼𝘁𝘄 𝗸𝗶𝗰𝗸 🏃 :\n`
+							teks+= `Eliminado por joto 🏃 :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`ASEK DAPAT MAKANAN , OTW KICK @${mentioned[0].split('@')[0]} ??`, mentioned, true)
+						mentions(`Eliminado por joto @${mentioned[0].split('@')[0]} ??`, mentioned, true)
 						client.groupRemove(from, mentioned)
 					}
 					break
@@ -1767,7 +1767,7 @@ module.exports = msgHdlr = async (client , mek) => {
 					teks = (args.length > 1) ? body.slice(8).trim() : ''
 					teks += '\n\n'
 					for (let mem of groupMembers) {
-						teks += `┣➥ @${mem.jid.split('@')[0]}\n`
+						teks += `Activense ┣➥ @${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
 					mentions(teks, members_id, true)
@@ -2377,8 +2377,9 @@ module.exports = msgHdlr = async (client , mek) => {
 				break
 				default:
 			if (body.startsWith(`${prefix}${command}`)) {
-                  reply(`Maaf *${pushname}*, Command *${prefix}${command}* Tidak Terdaftar Di Dalam *${prefix}menu*!`)
+                  reply(`Hola *${pushname}*, Command *${prefix}${command}* comando no encontrado, envía: *${prefix}menu*!`)
                   }
+
             if (/^>/.test(pes)) {
             	if (!isOwner) return
 	            let txt = pes.replace(/^>/, '')
