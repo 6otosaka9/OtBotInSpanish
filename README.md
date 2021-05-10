@@ -1,2 +1,2 @@
-# botwasapv7
-This fix after baileys update
+# OtBotInSpanish
+Esta versión está traducida al español
