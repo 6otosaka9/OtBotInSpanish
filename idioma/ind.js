@@ -124,6 +124,15 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 	}
 	if (isGroup){
 	return `
+${a}✶⊶⊷⊶⊷❍⊶⊷⊶⊷✶${a}
+ ${a}            𝕆𝕋 𝔹𝕆𝕋${a}
+${a}✶⊶⊷⊶⊷❍⊶⊷⊶⊷✶${a}
+
+${a}PORFAVOR NO SPAMEES QUE ME TRABO UnU${a}
+
+${a}Aprende a crear tu propio bot:${a}
+${a}https://youtube.com/channel/UCFxmiU6hMLDpdEyyWzmNpbQ${a}
+
 ${a}❏  USUARIO${a}
  ${a}│ Nombre : ${pushname}${a}
  ${a}│ Número : wa.me/${sender.split("@")[0]}${a}
@@ -133,10 +142,6 @@ ${a}❏  USUARIO${a}
  ${a}│ Nivel : ${getLevelingLevel(sender)}${a}
  ${a}│ Papel : ${role}${a}
  ${a}╰ Registros de usuario : ${_registered.length}${a}
-
-${a}❏  CANALES DE YOUTUBE${a}
- ${a}Turbo NTR : https://youtube.com/channel/UCqiXnIA8_K83MqHtnyMzR2A?sub_confirmatión=1${a}
- ${a}EL CUBANO MODS : https://youtube.com/channel/UCcII3XWHCxmKObs1K4dfg3g?sub_confirmatión=1${a}
  
 ${a}❏ACERCA DE BOT${a}
  ${a}│ Nombre : ${client.user.name}${a}
@@ -159,8 +164,8 @@ ${a}❏ACERCA DEL GRUPO${a}
  ${a}╰ antienlace : ${isAntiLink}${a}
  
  
- ${a}「uso total del comando」${a}
- *${pepolu} used*
+ ${a}「uso total de los comandos」${a}
+ *${pepolu} usados*
 
  *${prefix}info*
  *${prefix}donasi*
@@ -327,6 +332,15 @@ ${a}❏GRACIAS A${a}
 `
 } else if (!isGroup) {
     return `
+${a}✶⊶⊷⊶⊷❍⊶⊷⊶⊷✶${a}
+ ${a}            𝕆𝕋 𝔹𝕆𝕋${a}
+${a}✶⊶⊷⊶⊷❍⊶⊷⊶⊷✶${a}
+
+${a}PORFAVOR NO SPAMEES QUE ME TRABO UnU${a}
+
+${a}Aprende a crear tu propio bot:${a}
+${a}https://youtube.com/channel/UCFxmiU6hMLDpdEyyWzmNpbQ${a}
+
 ${a}❏ABOUT USER${a}
  ${a}│ Nombre : ${pushname}${a}
  ${a}│ Número : wa.me/${sender.split("@")[0]}${a}
@@ -335,10 +349,6 @@ ${a}❏ABOUT USER${a}
  ${a}│ Nivel : ${getLevelingLevel(sender)}${a}
  ${a}│ Papel : ${role}${a}
  ${a}╰ Registros de usuario : ${_registered.length}${a}
-
-${a}❏CANALES DE YOUTUBE${a}
- ${a}Turbo NTR : https://youtube.com/channel/UCqiXnIA8_K83MqHtnyMzR2A?sub_confirmatión=1${a}
- ${a}EL CUBANO MODS : https://youtube.com/channel/UCcII3XWHCxmKObs1K4dfg3g?sub_confirmatión=1${a}
  
 ${a}❏ACERCA DE BOT${a}
  ${a}│ • Nombre: ${client.user.name}${a}
@@ -349,8 +359,8 @@ ${a}❏ACERCA DE BOT${a}
  ${a}│ • Teléfono móvil : ${client.user.phone.device_manufacturer}${a}
  ${a}╰ • Versión wa : ${client.user.phone.wa_version}${a}
  
- ${a}「uso total del comando」${a}
- *${pepolu} used*
+ ${a}「uso total de los comandos」${a}
+ *${pepolu} usados*
 
  *${prefix}info*
  *${prefix}donasi*
