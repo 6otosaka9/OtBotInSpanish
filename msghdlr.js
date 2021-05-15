@@ -2089,7 +2089,7 @@ module.exports = msgHdlr = async (client , mek) => {
 					break
 				case 'addsticker':
 				if (!isRegistered) return reply(ind.noregis())
-					if (!isQuotedSticker) return reply('Responde la pegatina '')
+					if (!isQuotedSticker) return reply('Responde la pegatina')
 					svst = body.slice(12)
 					if (!svst) return reply('¿Cuál es el nombre de la pegatina?')
 					boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
