@@ -443,7 +443,7 @@ module.exports = msgHdlr = async (client , mek) => {
             if (bad.includes(messagesC)) {
                 if (!isGroupAdmins) {
                     try { 
-                        reply("KEEP DONG Saludos!! 😠")
+                        reply("JAGA UCAPAN DONG!! 😠")
                         setTimeout( () => {
  	                           client.groupRemove(from, sender) 
  					   	}, 5000)
@@ -465,11 +465,11 @@ module.exports = msgHdlr = async (client , mek) => {
 							}, 1000)
 								setTimeout( () => {
 								client.updatePresence(from, Presence.composing)
-								reply("*「 ANTI BADWORD 」*\nTe patearon por hablar con dureza!")
+								reply("*「 ANTI BADWORD 」*\nKamu dikick karena berkata kasar!")
 							}, 0)
-Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text , {quoted : mek}) }
+                        } catch { client.sendMessage(from, `Untung cya bukan admin, kalo admin udah cya kick!`, text , {quoted : mek}) }
                 } else {
-                    return reply( "Mire Min Speech 😇 ")
+                    return reply( "Tolong Jaga Ucapan Min 😇")
                 }
             }
         }
@@ -610,7 +610,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 					var gh = body.slice(9)
 					var porn = gh.split("&")[0];
 					var hub = gh.split("&")[1];
-					if (args.length < 1) return reply(`「❗」Ejemplo : ${prefix}pornhub Ramlan & Hub`)
+					if (args.length < 1) return reply(`「❗」Contoh : ${prefix}pornhub Ramlan & Hub`)
 					reply(ind.wait())
 					alan = await getBuffer(`https://vinz.zeks.xyz/api/pornhub?text1=${porn}&text2=${hub}`)
 					client.sendMessage(from, alan, image, {quoted: mek})
@@ -633,7 +633,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 					var gh = body.slice(12)
 					var gli = gh.split("&")[0];
 					var tch = gh.split("&")[1];
-					if (args.length < 1) return reply(`「❗」Ejemplo : ${prefix}glitchtext Ramlan & Gans`)
+					if (args.length < 1) return reply(`「❗」Contoh : ${prefix}glitchtext Ramlan & Gans`)
 					reply(ind.wait())
 					buffer = await getBuffer(`https://api.zeks.xyz/api/gtext?text1=${gli}&text2=${tch}&apikey=apivinz`)
 					client.sendMessage(from, buffer, image, {quoted: mek})
@@ -644,7 +644,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
 					if (args.length < 1) return reply(`Teksnya mana kak? Contoh : ${prefix}nulis Ramlan baik hati`)
 					nul = body.slice(7)
-					reply('「❗WAIT BRO GUE NULIS DUMLU YAKAN')
+					reply('「❗」WAIT BRO GUE NULIS DUMLU YAKAN')
 					tak = await getBuffer(`https://api.zeks.xyz/api/nulis?text=${nul}&apikey=apivinz`)
 					client.sendMessage(from, tak, image, {quoted: mek, caption: 'Lebih baik nulis sendiri ya kak :*'})
 					await limitAdd(sender)				
@@ -652,9 +652,9 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 				case 'tahta':
 					if (!isRegistered) return reply(ind.noregis())
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply(`「❗」Ejemplo : ${prefix}hartatahta hanya dia`)
+					if (args.length < 1) return reply(`「❗」Contoh : ${prefix}hartatahta hanya dia`)
 					har = body.slice(12)
-					reply('「❗Taburete para perro :v')
+					reply('「❗」Hirti Tihti Tai Anjg :v')
 					buffer = await getBuffer(`https://api.zeks.xyz/api/hartatahta?text=${har}&apikey=apivinz`)
 					client.sendMessage(from, buffer, image, {quoted: mek})
 					await limitAdd(sender)
@@ -837,7 +837,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
                 const namaUser = q.substring(0, q.indexOf('|') - 0)
                 const umurUser = q.substring(q.lastIndexOf('|') + 1)
                 const serialUser = createSerial(20)
-                if(isNaN(umurUser)) return await reply('Umur harus berupa angka!!')
+                if(isNaN(umurUser)) return await reply('La edad debe ser un número!!')
                 if (namaUser.length >= 30) return reply(`why is your name so long it's a name or a train`)
                 if (umurUser > 40) return reply(`your age is too  old maximum 40 years`)
                 if (umurUser < 12) return reply(`your age is too young minimum 12 years`)
@@ -975,7 +975,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 				case 'ytmp4':
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('Urlnya mana um?')
+					if (args.length < 1) return reply('¿Dónde está la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(ind.stikga())
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/ytmp4?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
@@ -989,7 +989,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 				case 'ytmp3':
                     if (!isRegistered) return reply(ind.noregis())
                     if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('Urlnya mana um?')
+					if (args.length < 1) return reply('¿Y dónde está la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(ind.wrogf())
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/ytmp3?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
@@ -1003,9 +1003,9 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
                 case 'text3d':
                 if (!isRegistered) return reply(ind.noregis())
                 if (isLimit(sender)) return reply(ind.limitend(pusname))
-              	    if (args.length < 1) return reply('teksnya mana kak?')
+              	    if (args.length < 1) return reply('donde esta el texto sis?')
                     teks = `${body.slice(8)}`
-                    if (teks.length > 10) return client.sendMessage(from, 'Teksnya kepanjangan, Maksimal 10 kalimat', text, {quoted: mek})
+                    if (teks.length > 10) return client.sendMessage(from, 'El texto es demasiado largo, un máximo de 10 frases.', text, {quoted: mek})
                     buff = await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, buff, image, {quoted: mek, caption: `${teks}`})
 			     	await limitAdd(sender)
@@ -1065,7 +1065,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 				case 'ssweb':
                 if (!isRegistered) return reply(ind.noregis())
                 if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('Urlnya mana om')
+					if (args.length < 1) return reply('¿Dónde está la url, tío?')
 					teks = body.slice(7)
 					reply(ind.wait())
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/screenshotweb?url=${teks}`)
@@ -1084,7 +1084,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
                 case 'kbbi':
                 if (!isRegistered) return reply(ind.noregis())
                 if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('Apa yang mau dicari um?')
+					if (args.length < 1) return reply('¿Qué quieres buscar?')
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/kbbi?search=${body.slice(6)}`, {method: 'get'})
 					reply('Menurut Kbbi:\n\n'+anu.result)
 					await limitAdd(sender)
@@ -1092,7 +1092,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
                 case 'artinama':
                 if (!isRegistered) return reply(ind.noregis())
                 if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('Apa yang mau dicari um?')
+					if (args.length < 1) return reply('¿Qué quieres buscar?')
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/arti?nama=${body.slice(10)}`, {method: 'get'})
 					reply('Menurut nama:\n\n'+anu.result)
 					await limitAdd(sender)
@@ -1113,7 +1113,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 				case 'info':
 					me = client.user
 					uptime = process.uptime()
-					teks = `*Nama bot* : ${me.name}\n*OWNER* : *AMPIBI*\n*AUTHOR* : AMPIBI\n*Nomor Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total Block Contact* : ${blocked.length}\n*The bot is active on* : ${kyun(uptime)}`
+					teks = `*Nama bot* : ${me.name}\n*OWNER* : *6OTOSAKA9*\n*AUTHOR* : 6OTOSAKA9\n*Nomor Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total Block Contact* : ${blocked.length}\n*The bot is active on* : ${kyun(uptime)}`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
@@ -1134,7 +1134,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
          	   case 'owner':
          	   case 'creator':
                   client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-                  client.sendMessage(from, 'Tuh nomer owner ku >_<, jangan spam atau ku block kamu',MessageType.text, { quoted: mek} )
+                  client.sendMessage(from, 'Este es mi número de propietario> _ <, no te envíe spam ni te bloquee',MessageType.text, { quoted: mek} )
 					break    
 				case 'leaderboard':
 				case 'lb':
@@ -1192,7 +1192,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
                 break
 				case 'mutual':
                 if (!isRegistered) return reply( ind.noregis())
-                if (isGroup) return  reply( 'Command ini tidak bisa digunakan di dalam grup!')
+                if (isGroup) return  reply( '¡Este comando no se puede usar en grupos!')
                 anug = getRegisteredRandomId(_registered).replace('@s.whatsapp.net','')
                 await reply('Looking for a partner...')
                 await reply(`wa.me/${anug}`)
@@ -1200,7 +1200,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
             break
             case 'next':
                 if (!isRegistered) return reply( ind.noregis())
-                if (isGroup) return  reply( 'Command ini tidak bisa digunakan di dalam grup!')
+                if (isGroup) return  reply( '¡Este comando no se puede usar en grupos!')
                 anug = getRegisteredRandomId(_registered).replace('@s.whatsapp.net','')
                 await reply('Looking for a partner...')
                 await reply(`wa.me/${anug}`)
@@ -1219,7 +1219,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
                 hasiltf = jumblah - fee
                 addKoinUser(tujuantf, hasiltf)
                 confirmATM(sender, jumblah)
-                addKoinUser('62895710073737@s.whatsapp.net', fee)
+                addKoinUser('51993966345@s.whatsapp.net', fee)
                 reply(`*「 SUKSES 」*\n\npengiriman uang telah sukses\ndari : +${sender.split("@")[0]}\nke : +${tujuan}\njumblah transfer : ${jumblah}\npajak : ${fee}`)
                 break
 				case 'dompet':
@@ -1455,7 +1455,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 				break 
 				case 'toimg':
 				if (!isRegistered) return reply(ind.noregis())
-				if (!isQuotedSticker) return reply('𝗥𝗲𝗽𝗹𝘆/𝘁𝗮𝗴 𝘀𝘁𝗶𝗰𝗸𝗲𝗿 !')
+				if (!isQuotedSticker) return reply('Etiqueta o responde al sticker')
 					reply(ind.wait())
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(encmedia)
@@ -1464,7 +1464,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 						fs.unlinkSync(media)
 						if (err) return reply(ind.stikga())
 						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: '𝗱𝗮?? 𝗷𝗮𝗱𝗶 '})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Y las gracias? no seas mamón XD'})
 						fs.unlinkSync(ran)
 					})
 					await limitAdd(sender)
@@ -1528,7 +1528,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
                 const userXp = getLevelingXp(sender)
                 if (userLevel === undefined && userXp === undefined) return reply(ind.lvlnul())
                 const requiredXp = 5000 * (Math.pow(2, userLevel) - 1)
-                resul = `┏━━❉ *LEVEL* ❉━━\n┣⊱ *Nombre* : ${pushname}\n┣⊱ Numero : wa.me/${sender.split("@")[0]}\n┣⊱ User XP :  ${userXp}/${requiredXp}\n┣⊱ Nivel de usuario : ${userLevel}\n┗━━━━━━━━━━━━`
+                resul = `┏━━❉ *NIVEL* ❉━━\n┣⊱ *Nombre* : ${pushname}\n┣⊱ Número : wa.me/${sender.split("@")[0]}\n┣⊱ User XP :  ${userXp}/${requiredXp}\n┣⊱ User Nivel : ${userLevel}\n┗━━━━━━━━━━━━`
                 costum(resul, text, tescuk, per)
 				break 
 				case 'mining':
@@ -1579,14 +1579,14 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 			    if (!isGroupAdmins) return reply(ind.admin())
 				if (!isBotGroupAdmins) return reply(ind.badmin())
                 client.groupUpdateSubject(from, `${body.slice(9)}`)
-                client.sendMessage(from, 'Succes, Ganti Nama Grup', text, {quoted: mek})
+                client.sendMessage(from, 'Éxito, cambiar el nombre del grupo', text, {quoted: mek})
 					break
                 case 'setdesc':
                 if (!isGroup) return reply(ind.groupo())
 			    if (!isGroupAdmins) return reply(ind.admin())
 				if (!isBotGroupAdmins) return reply(ind.badmin())
                 client.groupUpdateDescription(from, `${body.slice(9)}`)
-                client.sendMessage(from, 'Succes, Ganti Deskripsi Grup', text, {quoted: mek})
+                client.sendMessage(from, 'Éxito, cambio de descripción del grupo', text, {quoted: mek})
 					break
            case 'demote':
 					if (!isGroup) return reply(ind.groupo())
@@ -1635,7 +1635,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks+= `Eliminado por joto 🏃 :\n`
+							teks += `Eliminado por joto 🏃 :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
@@ -1677,7 +1677,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 					if (!isGroupAdmins) return reply(ind.admin())
 					if (args.length < 1) return reply('Boo :𝘃')
 					if (Number(args[0]) === 1) {
-						if (isSimi) return reply('𝘀𝘂𝗱𝗮𝗵 𝗮𝗸𝘁𝗶𝗳 !!!')
+						if (isSimi) return reply('ya activo !!!')
 						samih.push(from)
 						fs.writeFileSync('./database/bot/simi.json', JSON.stringify(samih))
 						reply('❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ ACTIVAR SIMI EN ESTE GRUPO')
@@ -1722,7 +1722,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
                 if (!isGroupAdmins) return reply(ind.admin())
                 if (args.length < 1) return reply('Boo :??')
                 if (args[0] === 'enable') {
-                if (isLevelingOn) return reply('*fitur level sudah aktif sebelum nya*')
+                if (isLevelingOn) return reply('*la función de nivel ha estado activa antes*')
                  	   _leveling.push(from)
                  	   fs.writeFileSync('./database/group/leveling.json', JSON.stringify(_leveling))
                   	   reply(ind.lvlon())
@@ -1739,7 +1739,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
                 if (!isGroupAdmins) return reply(ind.admin())
                 if (args.length < 1) return reply('Boo :??')
                 if (args[0] === 'enable') {
-                if (isBadWord) return reply('*fitur BadWord sudah aktif sebelum nya*')
+                if (isBadWord) return reply('*La función BadWord ha estado activa antes*')
                  	   badword.push(from)
                  	   fs.writeFileSync('./database/group/badword.json', JSON.stringify(badword))
                   	   reply(`badword is enable`)
@@ -1767,7 +1767,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 					teks = (args.length > 1) ? body.slice(8).trim() : ''
 					teks += '\n\n'
 					for (let mem of groupMembers) {
-						teks += `Activense ┣➥ @${mem.jid.split('@')[0]}\n`
+						teks += `┣➥ @${mem.jid.split('@')[0]}\n`
 						members_id.push(mem.jid)
 					}
 					mentions(teks, members_id, true)
@@ -1784,7 +1784,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
                     const bw = body.slice(12)
                     bad.push(bw)
                     fs.writeFileSync('./database/group/bad.json', JSON.stringify(bad))
-                    reply('Success Menambahkan Bad Word!')
+                    reply('La función BadWord ha estado activa antes')
                     break
                 case 'delbadword':
                     if (!isOwner) return reply(ind.ownerb())
@@ -1793,7 +1793,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
                     let dbw = body.slice(12)
                     bad.splice(dbw)
                     fs.writeFileSync('./database/group/bad.json', JSON.stringify(bad))
-                    reply('Success Menghapus BAD WORD!')
+                    reply('¡Eliminación exitosa de BAD WORD!')
                     break 
                 case 'listbadword':
                     let lbw = `Ini adalah list BAD WORD\nTotal : ${bad.length}\n`
@@ -1828,8 +1828,8 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 				case 'clone':
 					if (!isGroup) return reply(ind.groupo())
 					if (!isOwner) return reply(ind.ownerg()) 
-					if (args.length < 1) return reply(' *TAG YANG MAU DI CLONE!!!* ')
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag cvk')
+					if (args.length < 1) return reply(' *ETIQUETA QUE QUIERE EN CLONE!!!* ')
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Etiquetas de CVK')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					let { jid, id, notify } = groupMembers.find(x => x.jid === mentioned)
 					try {
@@ -1846,14 +1846,14 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 					if (!isOwner) return reply(ind.ownerb())
 					if (args.length < 1) return reply('Boo :𝘃')
 					if (Number(args[0]) === 1) {
-						if (isEventon) return reply('*SUDAH AKTIF* !!!')
+						if (isEventon) return reply('*ACTIVADO* !!!')
 						event.push(from)
 						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
-						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ MENGAKTIFKAN EVENT DI GROUP INI*')
+						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ ACTIVAR EVENTOS EN ESTE GRUPO*')
 					} else if (Number(args[0]) === 0) {
 						event.splice(from, 1)
 						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
-						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ MENONAKTIFKAN EVENT DI GROUP INI*')
+						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ APAGANDO EL EVENTO EN ESTE GRUPO*')
 					} else {
 						reply(ind.satukos())
 					}
@@ -1863,14 +1863,14 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 					if (!isGroupAdmins) return reply(ind.ownerg())
 					if (args.length < 1) return reply('Boo :𝘃')
 					if (Number(args[0]) === 1) {
-						if (isEventon) return reply('*SUDAH AKTIF* !!!')
+						if (isEventon) return reply('*ACTIVADO* !!!')
 						antilink.push(from)
 						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
-						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ ACTIVATED ANTILINK*')
+						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ ANTILINK ACTIVADO*')
 					} else if (Number(args[0]) === 0) {
 						antilink.splice(from, 1)
 						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
-						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ DEACTIVATED ANTILINK*')
+						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ ANTILINK DESACTIVADO*')
 					} else {
 						reply(ind.satukos())
 					}
@@ -1904,7 +1904,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
                         if (!isBotGroupAdmins) return reply(ind.badmin())
                        media = await client.downloadAndSaveMediaMessage(mek)
                          await client.updateProfilePicture (from, media)
-                        reply('SUCCESS CHANGE PROFILE GROUP')
+                        reply('PERFIO DEL GRUPO CAMBIADO CON ÉXITO')
 					break				
 				case 'leave': 
 				if (!isGroup) return reply(ind.groupo())
@@ -1921,12 +1921,12 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 						for (let _ of anu) {
 							client.sendMessage(_.jid, buff, image, {caption: `❮ 𝙋𝙀𝙎𝘼?? 𝘽??𝙊𝘼𝘿𝘾𝘼𝙎𝙏 ❯\n\n${body.slice(4)}`})
 						}
-						reply('*SUCCESS BROADCAST* ')
+						reply('*DIFUSIÓN DE ÉXITO* ')
 					} else {
 						for (let _ of anu) {
 							sendMess(_.jid, `*「 BROADCAST BOT 」*\n\n${body.slice(4)}`)
 						}
-						reply('*SUCCESS BROADCAST* ')
+						reply('*DIFUSIÓN DE EXITO* ')
 					}
 					break
 					case 'clearall':
@@ -1967,7 +1967,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 						for (let _ of anu) {
 							sendMess(_.jid, `*「 BC GROUP 」*\n\nDari Grup : ${groupName}\nPengirim : wa.me/${(sender.split('@')[0])}\nPesan : ${body.slice(6)}`)
 						}
-						reply('Sukses broadcast group')
+						reply('Grupo de transmisión exitoso')
 					}
 					break 
 				case 'eval':
@@ -2011,7 +2011,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 				ran = getRandom('.mp4')
 				exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 					fs.unlinkSync(media)
-					if (err) return reply('Yahh emrror bruh:(')
+					if (err) return reply('Si error bro :(')
 					buffer = fs.readFileSync(ran)
 					client.sendMessage(from, buffer, audio, { mimetype: 'audio/mp4', quoted: mek })
 					fs.unlinkSync(ran)
@@ -2089,9 +2089,9 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 					break
 				case 'addsticker':
 				if (!isRegistered) return reply(ind.noregis())
-					if (!isQuotedSticker) return reply('Reply stiker nya')
+					if (!isQuotedSticker) return reply('Responde la pegatina '')
 					svst = body.slice(12)
-					if (!svst) return reply('Nama sticker nya apa?')
+					if (!svst) return reply('¿Cuál es el nombre de la pegatina?')
 					boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 					delb = await client.downloadMediaMessage(boij)
 					setiker.push(`${svst}`)
@@ -2101,7 +2101,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 					break
 				case 'addvn':
 				if (!isRegistered) return reply(ind.noregis())
-					if (!isQuotedAudio) return reply('Reply vnnya blokk!')
+					if (!isQuotedAudio) return reply('Responder vn blockk!')
 					svst = body.slice(7)
 					if (!svst) return reply('Nama audionya apa su?')
 					boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
@@ -2129,9 +2129,9 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 					break
 				case 'addimage':
 				if (!isRegistered) return reply(ind.noregis())
-					if (!isQuotedImage) return reply('Reply imagenya blokk!')
+					if (!isQuotedImage) return reply('¡Responde, la imagen está bloqueada! '')
 					svst = body.slice(10)
-					if (!svst) return reply('Nama imagenya apa su?')
+					if (!svst) return reply('¿Cuál es el nombre de la imagen su?')
 					boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 					delb = await client.downloadMediaMessage(boij)
 					imagenye.push(`${svst}`)
@@ -2157,9 +2157,9 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 					break
 				case 'addvideo':
 				if (!isRegistered) return reply(ind.noregis())
-					if (!isQuotedVideo) return reply('Reply videonya blokk!')
+					if (!isQuotedVideo) return reply('¡Bloquear el video de respuesta! ')
 					svst = body.slice(10)
-					if (!svst) return reply('Nama videonya apa su?')
+					if (!svst) return reply('Nombre del video :v su?')
 					boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 					delb = await client.downloadMediaMessage(boij)
 					videonye.push(`${svst}`)
@@ -2244,7 +2244,7 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 				  })
 				
 				} else {
-				  reply('Gunakan foto!')
+				  reply('¡Usa una foto!')
 				}
 				break 
 				case 'wanted':
@@ -2377,9 +2377,8 @@ Afortunadamente, no soy administrador, si el administrador ya lo pateó!`, text 
 				break
 				default:
 			if (body.startsWith(`${prefix}${command}`)) {
-                  reply(`Hola *${pushname}*, Command *${prefix}${command}* comando no encontrado, envía: *${prefix}menu*!`)
+                  reply(`Maaf *${pushname}*, Command *${prefix}${command}* Tidak Terdaftar Di Dalam *${prefix}menu*!`)
                   }
-
             if (/^>/.test(pes)) {
             	if (!isOwner) return
 	            let txt = pes.replace(/^>/, '')
