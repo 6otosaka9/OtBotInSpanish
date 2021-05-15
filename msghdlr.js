@@ -837,7 +837,7 @@ module.exports = msgHdlr = async (client , mek) => {
                 const namaUser = q.substring(0, q.indexOf('|') - 0)
                 const umurUser = q.substring(q.lastIndexOf('|') + 1)
                 const serialUser = createSerial(20)
-                if(isNaN(umurUser)) return await reply('La edad debe ser un número!!')
+                if(isNaN(umurUser)) return await reply('Umur harus berupa angka!!')
                 if (namaUser.length >= 30) return reply(`why is your name so long it's a name or a train`)
                 if (umurUser > 40) return reply(`your age is too  old maximum 40 years`)
                 if (umurUser < 12) return reply(`your age is too young minimum 12 years`)
@@ -975,7 +975,7 @@ module.exports = msgHdlr = async (client , mek) => {
 				case 'ytmp4':
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('¿Dónde está la URL?')
+					if (args.length < 1) return reply('Urlnya mana um?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(ind.stikga())
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/ytmp4?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
@@ -989,7 +989,7 @@ module.exports = msgHdlr = async (client , mek) => {
 				case 'ytmp3':
                     if (!isRegistered) return reply(ind.noregis())
                     if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('¿Y dónde está la URL?')
+					if (args.length < 1) return reply('Urlnya mana um?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(ind.wrogf())
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/ytmp3?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
@@ -1003,9 +1003,9 @@ module.exports = msgHdlr = async (client , mek) => {
                 case 'text3d':
                 if (!isRegistered) return reply(ind.noregis())
                 if (isLimit(sender)) return reply(ind.limitend(pusname))
-              	    if (args.length < 1) return reply('donde esta el texto sis?')
+              	    if (args.length < 1) return reply('teksnya mana kak?')
                     teks = `${body.slice(8)}`
-                    if (teks.length > 10) return client.sendMessage(from, 'El texto es demasiado largo, un máximo de 10 frases.', text, {quoted: mek})
+                    if (teks.length > 10) return client.sendMessage(from, 'Teksnya kepanjangan, Maksimal 10 kalimat', text, {quoted: mek})
                     buff = await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${teks}`, {method: 'get'})
                     client.sendMessage(from, buff, image, {quoted: mek, caption: `${teks}`})
 			     	await limitAdd(sender)
@@ -1065,7 +1065,7 @@ module.exports = msgHdlr = async (client , mek) => {
 				case 'ssweb':
                 if (!isRegistered) return reply(ind.noregis())
                 if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('¿Dónde está la url, tío?')
+					if (args.length < 1) return reply('Urlnya mana om')
 					teks = body.slice(7)
 					reply(ind.wait())
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/screenshotweb?url=${teks}`)
@@ -1084,7 +1084,7 @@ module.exports = msgHdlr = async (client , mek) => {
                 case 'kbbi':
                 if (!isRegistered) return reply(ind.noregis())
                 if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('¿Qué quieres buscar?')
+					if (args.length < 1) return reply('Apa yang mau dicari um?')
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/kbbi?search=${body.slice(6)}`, {method: 'get'})
 					reply('Menurut Kbbi:\n\n'+anu.result)
 					await limitAdd(sender)
@@ -1092,7 +1092,7 @@ module.exports = msgHdlr = async (client , mek) => {
                 case 'artinama':
                 if (!isRegistered) return reply(ind.noregis())
                 if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('¿Qué quieres buscar?')
+					if (args.length < 1) return reply('Apa yang mau dicari um?')
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/arti?nama=${body.slice(10)}`, {method: 'get'})
 					reply('Menurut nama:\n\n'+anu.result)
 					await limitAdd(sender)
@@ -1113,7 +1113,7 @@ module.exports = msgHdlr = async (client , mek) => {
 				case 'info':
 					me = client.user
 					uptime = process.uptime()
-					teks = `*Nama bot* : ${me.name}\n*OWNER* : *6OTOSAKA9*\n*AUTHOR* : 6OTOSAKA9\n*Nomor Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total Block Contact* : ${blocked.length}\n*The bot is active on* : ${kyun(uptime)}`
+					teks = `*Nama bot* : ${me.name}\n*OWNER* : *AMPIBI*\n*AUTHOR* : AMPIBI\n*Nomor Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total Block Contact* : ${blocked.length}\n*The bot is active on* : ${kyun(uptime)}`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
@@ -1134,7 +1134,7 @@ module.exports = msgHdlr = async (client , mek) => {
          	   case 'owner':
          	   case 'creator':
                   client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-                  client.sendMessage(from, 'Este es mi número de propietario> _ <, no te envíe spam ni te bloquee',MessageType.text, { quoted: mek} )
+                  client.sendMessage(from, 'Tuh nomer owner ku >_<, jangan spam atau ku block kamu',MessageType.text, { quoted: mek} )
 					break    
 				case 'leaderboard':
 				case 'lb':
@@ -1192,7 +1192,7 @@ module.exports = msgHdlr = async (client , mek) => {
                 break
 				case 'mutual':
                 if (!isRegistered) return reply( ind.noregis())
-                if (isGroup) return  reply( '¡Este comando no se puede usar en grupos!')
+                if (isGroup) return  reply( 'Command ini tidak bisa digunakan di dalam grup!')
                 anug = getRegisteredRandomId(_registered).replace('@s.whatsapp.net','')
                 await reply('Looking for a partner...')
                 await reply(`wa.me/${anug}`)
@@ -1200,7 +1200,7 @@ module.exports = msgHdlr = async (client , mek) => {
             break
             case 'next':
                 if (!isRegistered) return reply( ind.noregis())
-                if (isGroup) return  reply( '¡Este comando no se puede usar en grupos!')
+                if (isGroup) return  reply( 'Command ini tidak bisa digunakan di dalam grup!')
                 anug = getRegisteredRandomId(_registered).replace('@s.whatsapp.net','')
                 await reply('Looking for a partner...')
                 await reply(`wa.me/${anug}`)
@@ -1219,7 +1219,7 @@ module.exports = msgHdlr = async (client , mek) => {
                 hasiltf = jumblah - fee
                 addKoinUser(tujuantf, hasiltf)
                 confirmATM(sender, jumblah)
-                addKoinUser('51993966345@s.whatsapp.net', fee)
+                addKoinUser('62895710073737@s.whatsapp.net', fee)
                 reply(`*「 SUKSES 」*\n\npengiriman uang telah sukses\ndari : +${sender.split("@")[0]}\nke : +${tujuan}\njumblah transfer : ${jumblah}\npajak : ${fee}`)
                 break
 				case 'dompet':
@@ -1455,7 +1455,7 @@ module.exports = msgHdlr = async (client , mek) => {
 				break 
 				case 'toimg':
 				if (!isRegistered) return reply(ind.noregis())
-				if (!isQuotedSticker) return reply('Etiqueta o responde al sticker')
+				if (!isQuotedSticker) return reply('𝗥𝗲𝗽𝗹𝘆/𝘁𝗮𝗴 𝘀𝘁𝗶𝗰𝗸𝗲𝗿 !')
 					reply(ind.wait())
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(encmedia)
@@ -1464,7 +1464,7 @@ module.exports = msgHdlr = async (client , mek) => {
 						fs.unlinkSync(media)
 						if (err) return reply(ind.stikga())
 						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Y las gracias? no seas mamón XD'})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: '𝗱𝗮?? 𝗷𝗮𝗱𝗶 '})
 						fs.unlinkSync(ran)
 					})
 					await limitAdd(sender)
@@ -1528,7 +1528,7 @@ module.exports = msgHdlr = async (client , mek) => {
                 const userXp = getLevelingXp(sender)
                 if (userLevel === undefined && userXp === undefined) return reply(ind.lvlnul())
                 const requiredXp = 5000 * (Math.pow(2, userLevel) - 1)
-                resul = `┏━━❉ *NIVEL* ❉━━\n┣⊱ *Nombre* : ${pushname}\n┣⊱ Número : wa.me/${sender.split("@")[0]}\n┣⊱ User XP :  ${userXp}/${requiredXp}\n┣⊱ User Nivel : ${userLevel}\n┗━━━━━━━━━━━━`
+                resul = `┏━━❉ *LEVEL* ❉━━\n┣⊱ *Nama* : ${pushname}\n┣⊱ Nomor : wa.me/${sender.split("@")[0]}\n┣⊱ User XP :  ${userXp}/${requiredXp}\n┣⊱ User Level : ${userLevel}\n┗━━━━━━━━━━━━`
                 costum(resul, text, tescuk, per)
 				break 
 				case 'mining':
@@ -1579,14 +1579,14 @@ module.exports = msgHdlr = async (client , mek) => {
 			    if (!isGroupAdmins) return reply(ind.admin())
 				if (!isBotGroupAdmins) return reply(ind.badmin())
                 client.groupUpdateSubject(from, `${body.slice(9)}`)
-                client.sendMessage(from, 'Éxito, cambiar el nombre del grupo', text, {quoted: mek})
+                client.sendMessage(from, 'Succes, Ganti Nama Grup', text, {quoted: mek})
 					break
                 case 'setdesc':
                 if (!isGroup) return reply(ind.groupo())
 			    if (!isGroupAdmins) return reply(ind.admin())
 				if (!isBotGroupAdmins) return reply(ind.badmin())
                 client.groupUpdateDescription(from, `${body.slice(9)}`)
-                client.sendMessage(from, 'Éxito, cambio de descripción del grupo', text, {quoted: mek})
+                client.sendMessage(from, 'Succes, Ganti Deskripsi Grup', text, {quoted: mek})
 					break
            case 'demote':
 					if (!isGroup) return reply(ind.groupo())
@@ -1635,13 +1635,13 @@ module.exports = msgHdlr = async (client , mek) => {
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `Eliminado por joto 🏃 :\n`
+							teks += `𝗔𝘀𝗲𝗸 𝗱𝗮𝗽𝗮𝘁 𝗺𝗮𝗸𝗮𝗻𝗮𝗻,𝗼𝘁𝘄 𝗸𝗶𝗰𝗸 🏃 :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`Eliminado por joto @${mentioned[0].split('@')[0]} ??`, mentioned, true)
+						mentions(`ASEK DAPAT MAKANAN , OTW KICK @${mentioned[0].split('@')[0]} ??`, mentioned, true)
 						client.groupRemove(from, mentioned)
 					}
 					break
@@ -1677,7 +1677,7 @@ module.exports = msgHdlr = async (client , mek) => {
 					if (!isGroupAdmins) return reply(ind.admin())
 					if (args.length < 1) return reply('Boo :𝘃')
 					if (Number(args[0]) === 1) {
-						if (isSimi) return reply('ya activo !!!')
+						if (isSimi) return reply('𝘀𝘂𝗱𝗮𝗵 𝗮𝗸𝘁𝗶𝗳 !!!')
 						samih.push(from)
 						fs.writeFileSync('./database/bot/simi.json', JSON.stringify(samih))
 						reply('❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ ACTIVAR SIMI EN ESTE GRUPO')
@@ -1722,7 +1722,7 @@ module.exports = msgHdlr = async (client , mek) => {
                 if (!isGroupAdmins) return reply(ind.admin())
                 if (args.length < 1) return reply('Boo :??')
                 if (args[0] === 'enable') {
-                if (isLevelingOn) return reply('*la función de nivel ha estado activa antes*')
+                if (isLevelingOn) return reply('*fitur level sudah aktif sebelum nya*')
                  	   _leveling.push(from)
                  	   fs.writeFileSync('./database/group/leveling.json', JSON.stringify(_leveling))
                   	   reply(ind.lvlon())
@@ -1739,7 +1739,7 @@ module.exports = msgHdlr = async (client , mek) => {
                 if (!isGroupAdmins) return reply(ind.admin())
                 if (args.length < 1) return reply('Boo :??')
                 if (args[0] === 'enable') {
-                if (isBadWord) return reply('*La función BadWord ha estado activa antes*')
+                if (isBadWord) return reply('*fitur BadWord sudah aktif sebelum nya*')
                  	   badword.push(from)
                  	   fs.writeFileSync('./database/group/badword.json', JSON.stringify(badword))
                   	   reply(`badword is enable`)
@@ -1784,7 +1784,7 @@ module.exports = msgHdlr = async (client , mek) => {
                     const bw = body.slice(12)
                     bad.push(bw)
                     fs.writeFileSync('./database/group/bad.json', JSON.stringify(bad))
-                    reply('La función BadWord ha estado activa antes')
+                    reply('Success Menambahkan Bad Word!')
                     break
                 case 'delbadword':
                     if (!isOwner) return reply(ind.ownerb())
@@ -1793,7 +1793,7 @@ module.exports = msgHdlr = async (client , mek) => {
                     let dbw = body.slice(12)
                     bad.splice(dbw)
                     fs.writeFileSync('./database/group/bad.json', JSON.stringify(bad))
-                    reply('¡Eliminación exitosa de BAD WORD!')
+                    reply('Success Menghapus BAD WORD!')
                     break 
                 case 'listbadword':
                     let lbw = `Ini adalah list BAD WORD\nTotal : ${bad.length}\n`
@@ -1828,8 +1828,8 @@ module.exports = msgHdlr = async (client , mek) => {
 				case 'clone':
 					if (!isGroup) return reply(ind.groupo())
 					if (!isOwner) return reply(ind.ownerg()) 
-					if (args.length < 1) return reply(' *ETIQUETA QUE QUIERE EN CLONE!!!* ')
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Etiquetas de CVK')
+					if (args.length < 1) return reply(' *TAG YANG MAU DI CLONE!!!* ')
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag cvk')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					let { jid, id, notify } = groupMembers.find(x => x.jid === mentioned)
 					try {
@@ -1846,14 +1846,14 @@ module.exports = msgHdlr = async (client , mek) => {
 					if (!isOwner) return reply(ind.ownerb())
 					if (args.length < 1) return reply('Boo :𝘃')
 					if (Number(args[0]) === 1) {
-						if (isEventon) return reply('*ACTIVADO* !!!')
+						if (isEventon) return reply('*SUDAH AKTIF* !!!')
 						event.push(from)
 						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
-						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ ACTIVAR EVENTOS EN ESTE GRUPO*')
+						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ MENGAKTIFKAN EVENT DI GROUP INI*')
 					} else if (Number(args[0]) === 0) {
 						event.splice(from, 1)
 						fs.writeFileSync('./database/bot/event.json', JSON.stringify(event))
-						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ APAGANDO EL EVENTO EN ESTE GRUPO*')
+						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ MENONAKTIFKAN EVENT DI GROUP INI*')
 					} else {
 						reply(ind.satukos())
 					}
@@ -1863,14 +1863,14 @@ module.exports = msgHdlr = async (client , mek) => {
 					if (!isGroupAdmins) return reply(ind.ownerg())
 					if (args.length < 1) return reply('Boo :𝘃')
 					if (Number(args[0]) === 1) {
-						if (isEventon) return reply('*ACTIVADO* !!!')
+						if (isEventon) return reply('*SUDAH AKTIF* !!!')
 						antilink.push(from)
 						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
-						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ ANTILINK ACTIVADO*')
+						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ ACTIVATED ANTILINK*')
 					} else if (Number(args[0]) === 0) {
 						antilink.splice(from, 1)
 						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
-						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ ANTILINK DESACTIVADO*')
+						reply('*❬ 𝗦𝗨𝗞𝗦𝗘𝗦 ❭ DEACTIVATED ANTILINK*')
 					} else {
 						reply(ind.satukos())
 					}
@@ -1904,7 +1904,7 @@ module.exports = msgHdlr = async (client , mek) => {
                         if (!isBotGroupAdmins) return reply(ind.badmin())
                        media = await client.downloadAndSaveMediaMessage(mek)
                          await client.updateProfilePicture (from, media)
-                        reply('PERFIO DEL GRUPO CAMBIADO CON ÉXITO')
+                        reply('SUCCESS CHANGE PROFILE GROUP')
 					break				
 				case 'leave': 
 				if (!isGroup) return reply(ind.groupo())
@@ -1921,12 +1921,12 @@ module.exports = msgHdlr = async (client , mek) => {
 						for (let _ of anu) {
 							client.sendMessage(_.jid, buff, image, {caption: `❮ 𝙋𝙀𝙎𝘼?? 𝘽??𝙊𝘼𝘿𝘾𝘼𝙎𝙏 ❯\n\n${body.slice(4)}`})
 						}
-						reply('*DIFUSIÓN DE ÉXITO* ')
+						reply('*SUCCESS BROADCAST* ')
 					} else {
 						for (let _ of anu) {
 							sendMess(_.jid, `*「 BROADCAST BOT 」*\n\n${body.slice(4)}`)
 						}
-						reply('*DIFUSIÓN DE EXITO* ')
+						reply('*SUCCESS BROADCAST* ')
 					}
 					break
 					case 'clearall':
@@ -1967,7 +1967,7 @@ module.exports = msgHdlr = async (client , mek) => {
 						for (let _ of anu) {
 							sendMess(_.jid, `*「 BC GROUP 」*\n\nDari Grup : ${groupName}\nPengirim : wa.me/${(sender.split('@')[0])}\nPesan : ${body.slice(6)}`)
 						}
-						reply('Grupo de transmisión exitoso')
+						reply('Sukses broadcast group')
 					}
 					break 
 				case 'eval':
@@ -2011,7 +2011,7 @@ module.exports = msgHdlr = async (client , mek) => {
 				ran = getRandom('.mp4')
 				exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 					fs.unlinkSync(media)
-					if (err) return reply('Si error bro :(')
+					if (err) return reply('Yahh emrror bruh:(')
 					buffer = fs.readFileSync(ran)
 					client.sendMessage(from, buffer, audio, { mimetype: 'audio/mp4', quoted: mek })
 					fs.unlinkSync(ran)
@@ -2089,9 +2089,9 @@ module.exports = msgHdlr = async (client , mek) => {
 					break
 				case 'addsticker':
 				if (!isRegistered) return reply(ind.noregis())
-					if (!isQuotedSticker) return reply('Responde la pegatina ')
+					if (!isQuotedSticker) return reply('Reply stiker nya')
 					svst = body.slice(12)
-					if (!svst) return reply('¿Cuál es el nombre de la pegatina?')
+					if (!svst) return reply('Nama sticker nya apa?')
 					boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 					delb = await client.downloadMediaMessage(boij)
 					setiker.push(`${svst}`)
@@ -2101,7 +2101,7 @@ module.exports = msgHdlr = async (client , mek) => {
 					break
 				case 'addvn':
 				if (!isRegistered) return reply(ind.noregis())
-					if (!isQuotedAudio) return reply('Responder vn blockk!')
+					if (!isQuotedAudio) return reply('Reply vnnya blokk!')
 					svst = body.slice(7)
 					if (!svst) return reply('Nama audionya apa su?')
 					boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
@@ -2129,9 +2129,9 @@ module.exports = msgHdlr = async (client , mek) => {
 					break
 				case 'addimage':
 				if (!isRegistered) return reply(ind.noregis())
-					if (!isQuotedImage) return reply('¡Responde, la imagen está bloqueada! ')
+					if (!isQuotedImage) return reply('Reply imagenya blokk!')
 					svst = body.slice(10)
-					if (!svst) return reply('¿Cuál es el nombre de la imagen su?')
+					if (!svst) return reply('Nama imagenya apa su?')
 					boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 					delb = await client.downloadMediaMessage(boij)
 					imagenye.push(`${svst}`)
@@ -2157,9 +2157,9 @@ module.exports = msgHdlr = async (client , mek) => {
 					break
 				case 'addvideo':
 				if (!isRegistered) return reply(ind.noregis())
-					if (!isQuotedVideo) return reply('¡Bloquear el video de respuesta! ')
+					if (!isQuotedVideo) return reply('Reply videonya blokk!')
 					svst = body.slice(10)
-					if (!svst) return reply('Nombre del video :v su?')
+					if (!svst) return reply('Nama videonya apa su?')
 					boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 					delb = await client.downloadMediaMessage(boij)
 					videonye.push(`${svst}`)
@@ -2244,7 +2244,7 @@ module.exports = msgHdlr = async (client , mek) => {
 				  })
 				
 				} else {
-				  reply('¡Usa una foto!')
+				  reply('Gunakan foto!')
 				}
 				break 
 				case 'wanted':
@@ -2417,7 +2417,6 @@ module.exports = msgHdlr = async (client , mek) => {
 			console.log('Error : %s', color(e, 'red'))
 		}
 	}
-
 
 
 
